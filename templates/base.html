@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-<!-- HEAD -->
 <head>
-<title>Developer Assistant - {% block title}{%endblock}</title>
+    <title>Developer Assistant - {% block title %}{% endblock %}</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 
 <body>
-
+{% block content %}{% endblock %}
+</body>
