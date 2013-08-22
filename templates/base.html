@@ -1,15 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Developer Assistant - {% block title %}{% endblock %}</title>
+        <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename='css/bootstrap.css') }}' />
+    </head>
 
-<head>
-    <meta charset='utf-8' />
-    <title>Developer Assistant - {% block title %}{% endblock %}</title>
-    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='styles.css') }}' />
-</head>
-
-<body>
-<div id='top_menu'>Top menu</div>
-{% block content %}{% endblock %}
-<div id='footer'>Footer</div>
-</body>
+    <body>
+        {% block content %}{% block content %}
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as
+        needed -->
+        <script src='{{ url_for('static', filename='js/bootstrap.min.js') }}'></script>
+    </body>
+</html>
