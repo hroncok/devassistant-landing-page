@@ -8,11 +8,44 @@
     </head>
 
     <body>
-        {% block content %}{% block content %}
+    <div class="container-fluid pagination-centered">
+        <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Developer Assistant</a>
+        </div>
+
+        <div class="container col-md-8">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            <li><a href="http://blog.devassistant.org">Blog</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="http://doc.devassistant.org">Users</a></li>
+                <li><a href="http://doc.devassistant.org">Developers</a></li>
+                </ul>
+            <li><a href="http://ask.devassistant.org">FAQ</a></li>
+            <li><a href="#">About</a></li>
+            </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        </nav>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="//code.jquery.com/jquery.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as
         needed -->
         <script src='{{ url_for('static', filename='js/bootstrap.min.js') }}'></script>
+</div></div>
     </body>
 </html>
