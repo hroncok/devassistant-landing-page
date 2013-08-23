@@ -19,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">DevAssistant</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">DevAssistant</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,7 +36,7 @@
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contribute</a></li>
             <li><a href="#">Source</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
             </li>
             </ul>
         </div><!-- /.navbar-collapse -->
