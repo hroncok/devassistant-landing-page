@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Homepage{% endblock %}
+{% block content %}
+<div class="jumbotron landing-page-jumbotron" style="background-image: url('{{ url_for("static", filename="jumbotron-bg.png") }}')">
+    <div class="container">
+        <h1 class="landing-page-title">DevAssistant</h1>
+        <p><em>Making life easier for developers</em></p>
+        <p><a href="#GetStarted" class="btn btn-primary btn-lg"
+              title="Learn how to get started with Devassistant">Get Started</a>
+           <a href="#Features" class="btn btn-primary btn-lg">Features</a>
+        </p>
+    </div>
+</div>
+<p class="lead">
+DevAssistant. It assists developers.
+</p>
+<p>DevAssistant can help you set up your developing environment, publish your
+code, and do many of the chores that somehow keep you from the important
+stuff - <em>writing your software</em>. It does not matter if you only recently
+discovered the world of software development, or if you have been coding for
+two decades, there's always something DevAssistant can do to make your life
+easier.</p>
+
+<p>This is Free Software. Free as in speech. It is released under the
+terms of the <strong>GPL version 2 or later</strong>. That means that you can
+do great many things with it freely, but you have to <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html"
+target="_blank" title="GPL v2 FAQ">follow some rules too</a>.</p>
+
+<div class="row announcement-boxes">
+<div class="container col-sm-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">Blog</div>
+            <ul class="list-group">
+            {% for item in posts %}
+            <li class="list-group-item"><a href="{{ item.url }}" title="Go to blog"><strong>{{ item.title }}</strong></a><br />
+                <small><i>{{ item.date }}</i></small><br />
+                {{ item.description }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class="container">
+        <p>For more posts, go to our <a href="http://blog.devassistant.org"
+            title="DevAssistant blog" target="_blank">blog...</a></p>
+    </div>
+</div>
+<div class="container col-sm-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">Announcements</div>
+        <!-- Announcements from backend DB go here -->
+        <div class="panel-body"><em>No announcements yet</em></div>
+    </div>
+</div>
+<div class="container col-sm-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">What people say about us</div>
+        <!-- Media references from backend DB go here -->
+        <div class="panel-body"><em>No media yet</em></div>
+    </div>
+</div>
+</div>
+
+<div class="page-header" id="Features">
+    <h2>Features <small>What's in it for you</small></h2>
+</div>
+<div class="thumb thumb-right">
+    <img src="{{ url_for('static', filename='devassistant-ui.png') }}"
+         alt="DevAssistant GUI overview" class="thumbnail" /></div>
+<h3>GUI + Command line interface <small>Whatever you prefer</small></h3>
+<p>DevAssistant comes with two interfaces: Graphical and command line. The goal of
+both is the quickest set up of your environment as possible. It only takes a
+couple of clicks to get started with the GUI, or one console command, depending
+on your preferences. The program is designed with both beginning and seasoned
+developers in mind, so no matter what your experience is, DevAssistant is easy
+and efficient for you to use.</p>
+
+<h3>Support for multiple languages <small>Java, Ruby, Python, C, Perl, and more</small></h3>
+<p>DevAssistant supports many popular language choices, including C,
+C++, Java, Perl, PHP, Python and Ruby on Rails. Thanks to DevAssistant's
+architecture, you can add support for other languages or frameworks by adding a
+YAML-formatted script. If you feel that your favourite one is missing, you
+can either tell us, or write it yourself.</p>
+
+<h3>Installing dependencies <small>No more worrying if you have the right libraries</small></h3>
+<p>You may disagree with us, but we hate manually installing dependencies. That's
+why we made DevAssistant do this for you. It does not matter if you are setting
+up a new project or editing an existing one, DevAssistant can download and install
+the necessary dependencies, and save you all the headache.</p>
+
+<div class="thumb thumb-left">
+    <img src="{{ url_for('static', filename='fedora-logo.png') }}"
+    alt="Fedora Logo" class="thumbnail" /></div>
+<h3>Packaged in Fedora <small># yum install devassistant</small></h3>
+<p>You can get DevAssitant in numerous ways, but we prefer installing it in
+Fedora, for example with YUM.  While pip or the tarball are perfectly fine
+choices, you don't get things like effortless updates with either of these. In
+Fedora, just run 'yum update devassistant', and the latest version comes your
+way, nice and clean.</p>
+
+<h3>Integration with GitHub <small>and other code repositories</small></h3>
+<p>Once you've written some code, it's great to share it with the world
+somehow. Lately, the most popular choice has been GitHub, so DevAssistant can make
+a GitHub repository for your project and push changes automatically, out of the box.</p>
+
+<div class="page-header" id="GetStarted">
+    <h2>Get Started with DevAssistant <small>in a few minutes</small></h2>
+</div>
+    <p>DevAssistant is a project to help you do more coding and less setting up.
+    This is a beginners guide. If you are more experienced and are looking for
+    user documentation, please go to <a href="http://doc.devassistant.org/en/latest/user_documentation.html"
+    title="User documentation">http://doc.devassistant.org/en/latest/user_documentation.html</a>.  </p>
+
+    <h3>Installation</h3>
+    <p>To start using DevAssistant, you need to install it. Currently, we only
+    support Fedora, CentOS and RHEL (Red Hat Enterprise Linux), but you can
+    try installing DevAssistant on other systems as well. However, it might
+    work poorly or not work at all. We are going to add support for some other
+    systems soon, though, so stay tuned.</p>
+    <p>Various methods of installation are available; they are described in the
+    <a href="{{ url_for('download') }}" title="How to get DevAssistant">download</a>
+    section. Once you have installed DevAssistant on your system, read on.</p>
+
+    <h3>Graphical Interface vs. the Console</h3>
+    <p>You have 2 options of running DevAssistant:</p>
+    <ul>
+        <li>Graphical interface</li>
+        <li>Command line interface</li>
+    </ul>
+    <p>Both can do the same, so it is only a matter of your preference. More
+    can be found in <a href="http://doc.devassistant.org/en/latest/user_documentation.html"
+    target="_blank">user documentation</a>.</p>
+{% endblock %}

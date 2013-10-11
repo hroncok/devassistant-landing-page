@@ -1,0 +1,6 @@
+=== Developer Assistant Landing Page ===
+
+This is the Flask app for DevAssistant landing page
+
+This website uses the Twitter Bootstrap CSS framework, which is licensed under
+the Apache License, v2.0. The text thereof is available in LICENSE-BOOTSTRAP.txt

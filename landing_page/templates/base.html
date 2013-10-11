@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>DevAssistant - {% block title %}{% endblock %}</title>
+        <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename='css/bootstrap.css') }}' />
+        <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/custom.css') }}' />
+    </head>
+
+    <body>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container page-container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url_for('index') }}"
+                       title="Go to homepage">DevAssistant</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url_for('index') }}#GetStarted"
+                           title="Find out how to get started using DevAssistant">Get Started</a></li>
+                    <li><a href="{{ url_for('download') }}"
+                           title="Get DevAssistant your preferred way">Download</a></li>
+                    <li><a href="http://blog.devassistant.org"
+                           title="Blog with latest events, releases and announcements"
+                           target="_blank">Blog</a></li>
+                    <li><a href="{{ url_for('about') }}"
+                           title="The DevAssistant Team">About</a></li>
+                    <li><a href="{{ url_for('contact') }}"
+                           title="How to get in touch with us">Contact</a></li>
+                    <li><a href="{{ url_for('contribute') }}"
+                            title="Help us help you get stuff done">Contribute</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="http://doc.devassistant.org/en/latest/developer_documentation.html"
+                               title="Self-explanatory :)"
+                               target="_blank">Developer Documentation</a></li>
+                        <li><a href="https://github.com/bkabrda/devassistant"
+                               title="Source repository at GitHub"
+                               target="_blank">Get source code</a></li>
+                        <li><a href="https://github.com/bkabrda/devassistant/issues"
+                               title="DevAssistant's issue tracker on GitHub"
+                               target="_blank">Bugs/Issues</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                </nav>
+
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+            <hr />
+            <div id="footer"><p class="text-muted credit">&#169; 2013 Red Hat Inc.</p></div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as
+        needed -->
+        <script src='{{ url_for('static', filename='js/bootstrap.min.js') }}'></script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+.page-container {
+    margin-top: 20px;
+    max-width: 900px
+}
+
+.landing-page-jumbotron {
+    background-position: left bottom
+}
+
+.landing-page-title {
+    font-weight: 700
+}
+
+.announcement-boxes {
+    margin-top: 30px
+}
+
+.thumb {
+    max-width: 30%
+}
+
+.thumb-left {
+    float: left;
+    margin-right: 10px
+}
+
+.thumb-right {
+    float: right;
+    margin-left: 10px
+}

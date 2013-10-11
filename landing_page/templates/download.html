@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Get DevAssistant{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Get DevAssistant</h1>
+</div>
+
+<h2>Install in Fedora</h2>
+<p>We recommend running Fedora (the Linux OS; you can get it
+    <a href="https://fedoraproject.org/en/get-fedora">here</a>). With Fedora running, you can install
+    DevAssistant simply by executing
+</p>
+<div class="well"># yum install devassistant</div>
+<p>in the command line or installing devassistant through Yum-Extender or Gnome-PackageKit by searching for devassistant.
+
+<h2>Install with pip</h2>
+<p>DevAssistant is available for download via pip, the Python package
+installer. If your operating system has a package manager, you can install pip
+with it (precise method depends on your OS). The package is usually named pip
+or python-pip. If your system doesn't have a package manager, you can <a
+href="http://www.pip-installer.org/en/latest/installing.html">download pip</a>.
+<div class="well">
+    $ pip install devassistant
+</div>
+<p>Bear in mind, though, that you don't get automatic updates with pip as opposed to the option above.</p>
+
+<h2>Download archive</h2>
+<p>If you prefer to download an tarball, you can get it from <a
+    href="https://github.com" title="GitHub">GitHub</a>. The link provided
+below contains the tarball with the latest commit. For tagged releases and/or
+downloading the source from a different branch, you can browse the <a
+href="https://github.com/bkabrda/devassistant">repository</a>.</p>
+<div class="well">
+    <a href="https://github.com/bkabrda/devassistant/archive/master.zip">https://github.com/bkabrda/devassistant/archive/master.zip</a>
+</div>
+{% endblock %}
