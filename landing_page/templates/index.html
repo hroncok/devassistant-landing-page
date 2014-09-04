@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Homepage{% endblock %}
 {% block content %}
-<div class="jumbotron landing-page-jumbotron" style="background-image: url('{{ url_for("static", filename="jumbotron-bg.png") }}')">
+<div class="jumbotron landing-page-jumbotron">
     <div class="container">
-        <h1 class="landing-page-title">DevAssistant</h1>
-        <p><em>Making life easier for developers</em></p>
-        <p><a href="#GetStarted" class="btn btn-primary btn-lg"
+        <h1><span class="landing-page-title">DevAssistant</span></h1>
+        <p style="padding-left: 5px"><a href="#GetStarted" class="btn btn-primary btn-lg"
               title="Learn how to get started with Devassistant">Get Started</a>
            <a href="#Features" class="btn btn-primary btn-lg">Features</a>
         </p>
     </div>
 </div>
 <p class="lead">
-DevAssistant. It assists developers.
+Start developing with ease.
 </p>
 <p>DevAssistant can help you set up your developing environment, publish your
 code, and do many of the chores that somehow keep you from the important
@@ -32,29 +31,48 @@ target="_blank" title="GPL v2 FAQ">follow some rules too</a>.</p>
         <div class="panel-heading">Blog</div>
             <ul class="list-group">
             {% for item in posts %}
-            <li class="list-group-item"><a href="{{ item.url }}" title="Go to blog"><strong>{{ item.title }}</strong></a><br />
+            <li class="list-group-item"><a href="{{ item.url }}" target="_blank" title="Go to blog"><strong>{{ item.title }}</strong></a><br />
                 <small><i>{{ item.date }}</i></small><br />
                 {{ item.description }}</li>
             {% endfor %}
+            <li class="list-group-item">For more posts, go to our <a href="http://blog.devassistant.org"
+                title="DevAssistant blog" target="_blank">blog...</a></li>
             </ul>
     </div>
     <div class="container">
-        <p>For more posts, go to our <a href="http://blog.devassistant.org"
-            title="DevAssistant blog" target="_blank">blog...</a></p>
     </div>
 </div>
 <div class="container col-sm-4">
     <div class="panel panel-default">
-        <div class="panel-heading">Announcements</div>
+        <div class="panel-heading">Twitter <span style='float: right'><a href="https://twitter.com/Dev_Assistant" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @Dev_Assistant</a></span>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
         <!-- Announcements from backend DB go here -->
-        <div class="panel-body"><em>No announcements yet</em></div>
+        <div class="twitter-box">
+            <a class="twitter-timeline"
+                data-tweet-limit="3"
+                data-dnt="true"
+                data-chrome="noheader noborders nofooter"
+                data-link-color="#0d4eab"
+                href="https://twitter.com/Dev_Assistant"
+                data-widget-id="390060580419022848">Tweets by @Dev_Assistant</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">For more tweets, see our <a href="http://twitter.com/Dev_Assistant"
+                title="DevAssistant Twitter page" target="_blank">Twitter...</a></li>
+        </ul>
     </div>
 </div>
 <div class="container col-sm-4">
     <div class="panel panel-default">
         <div class="panel-heading">What people say about us</div>
         <!-- Media references from backend DB go here -->
-        <div class="panel-body"><em>No media yet</em></div>
+        <ul class="list-group">
+        {% for item in mentions %}
+        <li class="list-group-item"><a href="{{ item.url }}" target="_blank" title="Go to source"><strong>{{ item.title }}</strong></a><br />
+            <p>{{ item.quote }}</p><p class="signature"><small><i>{{ item.author }}</i></small><p></li>
+        {% endfor %}
+        </ul>
     </div>
 </div>
 </div>

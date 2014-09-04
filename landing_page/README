@@ -2,5 +2,22 @@
 
 This is the Flask app for DevAssistant landing page
 
+
+== What people say about us ==
+
+The 'What people say about us' content is stored in landing_page/static/mentions,
+and consists of an arbitrarily named files (only the suffix .cfg is required)
+of the following structure (one mention per file):
+
+    [Mention]
+    title    = This is the heading
+    quote    = This is the quote what they said
+    url      = URL of the source
+    author   = Author of the quote
+    priority = Used to order stuff. Higher number means higher position.
+
+
+== License ==
+
 This website uses the Twitter Bootstrap CSS framework, which is licensed under
 the Apache License, v2.0. The text thereof is available in LICENSE-BOOTSTRAP.txt

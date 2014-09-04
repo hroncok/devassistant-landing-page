@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="DevAssistant is a tool to make software developers' life easier" />
         <title>DevAssistant - {% block title %}{% endblock %}</title>
-        <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename='css/bootstrap.css') }}' />
-        <link rel='stylesheet' type='text/css' media='screen' href='{{ url_for('static', filename='css/bootstrap-theme.css') }}' />
-        <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/custom.css') }}' />
+        <link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
+        <link rel=stylesheet type="text/css" media=screen href='{{ url_for('static', filename='css/bootstrap.css') }}' />
+        <link rel=stylesheet type="text/css" href="{{ url_for('static', filename='css/custom.css') }}" />
+        <!-- This will be removed -->
+        <style type="text/css">
+            .page-header {
+                background: top right url("{{ url_for('static', filename="header-bg.png") }}") white;
+                background-repeat: no-repeat;
+            }
+            .landing-page-jumbotron {
+                background-image: url("{{ url_for("static", filename="jumbotron-bg.png") }}")
+            }
+        </style>
     </head>
 
     <body>
@@ -20,8 +31,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ url_for('index') }}"
-                       title="Go to homepage">DevAssistant</a>
+                    <a class="navbar-brand" href="{{ url_for('index') }}" title="Go to homepage"><img
+                        src="{{ url_for('static', filename='da-logo.png') }}" /> DevAssistant</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,5 +81,15 @@
         <!-- Include all compiled plugins (below), or include individual files as
         needed -->
         <script src='{{ url_for('static', filename='js/bootstrap.min.js') }}'></script>
+        <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-42365470-2', 'devassistant.org');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>

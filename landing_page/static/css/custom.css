@@ -1,30 +1,78 @@
+h1, h2, h3, .navbar-brand {
+    font-family: Spinnaker, sans-serif;
+    padding-top: 17px;
+}
+
+a {
+    color: #0d4eab;
+}
+
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
 .page-container {
     margin-top: 20px;
-    max-width: 900px
+    max-width: 900px;
+}
+
+.navbar-brand img {
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-default, .panel-default .panel-heading {
+    background-color: #e8e9e9;
+}
+
+.navbar li a {
+    line-height: 28px;
 }
 
 .landing-page-jumbotron {
-    background-position: left bottom
+    min-height: 304px;
 }
 
 .landing-page-title {
-    font-weight: 700
+    font-weight: 700;
+    background-color: #e8e9e9;
+    padding-right: 10px;
 }
 
 .announcement-boxes {
-    margin-top: 30px
+    margin-top: 30px;
+}
+
+.lead {
+    font-family: Spinnaker, sans-serif;
 }
 
 .thumb {
-    max-width: 30%
+    max-width: 30%;
 }
 
 .thumb-left {
     float: left;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .thumb-right {
     float: right;
-    margin-left: 10px
+    margin-left: 10px;
 }
+
+.twitter-box {
+    padding: 3px;
+}
+
+.signature {
+    text-align: right;
+}
+
+.btn-primary {
+    background-color: #0d4eab;
+}
+
